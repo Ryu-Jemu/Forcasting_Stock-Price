@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-df = fdr.DataReader('041510', '2024-11-01', '2024-11-30')
+df = fdr.DataReader('041510', '2024-12-01', '2024-12-31')
 df.reset_index(inplace=True)
 
 sentiment_daily = pd.read_csv('sentiment_daily.csv')
