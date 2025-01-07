@@ -77,9 +77,12 @@ def extract_news_content(url):
     
 def main():
     keywords = input("Enter 5 search keywords separated by commas: ").split(',')
-    keywords = [kw.strip() for kw in keywords if kw.strip()]
-    if len(keywords) != 5:
-        print("Please enter exactly 5 keywords.")
+    # 모든 키워드의 공백 제거 후, 빈 문자열 제거
+    keywords = [kw.strip() for kw in keywords]
+    # 중간에 빈 키워드가 있다면 이를 사용자에게 명확히 알림
+    if len(keywords) != 5 or '' in keywords:
+        print(f"Invalid input. You entered: {keywords}")
+        print("Please enter exactly 5 valid keywords separated by commas.")
         return
 
     try:
